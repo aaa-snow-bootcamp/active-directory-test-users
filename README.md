@@ -2,7 +2,8 @@
 
 ## Overview
 
-*Requirements:*
+Requirements:
+
 - Access to Windows with Active Directory
 
 ## Generating user data
@@ -17,9 +18,3 @@ We first use https://mockaroo.com/ to generate user data in Excel/CSV format. He
 
 ...
 
-## Resources 
-
-- https://auth0.com/docs/connector/test-dc
-- https://helgeklein.com/blog/2015/02/creating-realistic-test-user-accounts-active-directory/
-- https://www.petri.com/populate-active-directory-with-test-user-accounts
-- https://github.com/cunninghamp/New-LabUsers.ps1
