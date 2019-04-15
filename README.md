@@ -22,3 +22,9 @@ Choose CSV as the export format.
 
 ...
 
+## Groups
+
+...
+
+- https://docs.microsoft.com/en-us/powershell/module/activedirectory/add-adgroupmember?view=winserver2012-ps
+
