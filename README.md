@@ -14,8 +14,6 @@ Here, make sure to enter the LDAP attribute names in the Field Name column. This
 
 > [Reference of LDAP attribute names](https://www.manageengine.com/products/ad-manager/help/csv-import-management/active-directory-ldap-attributes.html)
 
-![](https://raw.githubusercontent.com/aaa-snow-bootcamp/active-directory-test-users/master/screenshot-mockaroo.png)
-
 Choose CSV as the export format. Now we have a CSV file with our user data.
 
 ## Importing user data into Active Directory
