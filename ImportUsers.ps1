@@ -2,11 +2,11 @@
 #
 # Usage:
 #
-# import-users
+# ImportUsers <Path to CSV file>
 #
 # Supply a CSV file containing Active Directory user data.
-# The header row must specify valid Active Directory attribute names.
-# A SamAccountName is required for each user.
+# - The header row must specify valid Active Directory attribute names.
+# - A SamAccountName is required for each user.
 
 [CmdletBinding()]
 param (
