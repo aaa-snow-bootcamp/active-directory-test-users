@@ -27,5 +27,13 @@ Work notes:
 
 Our import is based on a [PowerShell script by Robert Allen](https://activedirectorypro.com/create-bulk-users-active-directory/). 
 
+1. At the beginning of the scropt modify the path behind *Import-csv* to point to your generated file
 
+(Challenge: Re-write the powershell script to accept the file name of the CSV as a parameter when run from the command line.)
+
+2. Add all Active Directory attributes that you would like to map.
+
+3. Run the script from your Windows command line.
+
+✔ Check Active Directory to find your newly generated users and groups.
 
