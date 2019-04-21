@@ -1,12 +1,31 @@
 # Imports Active Directory Users from CSV
-# - CSV header row must specify AD attribute names
-# - SamAccountName is required for each user
+#
+# Usage:
+#
+# import-users
+#
+# Supply a CSV file containing Active Directory user data.
+# The header row must specify valid Active Directory attribute names.
+# A SamAccountName is required for each user.
+
+[CmdletBinding()]
+param (
+	[Parameter( Mandatory=$false)]
+	[string]$InputFileName = "users.csv",
+)
 
 # Import active directory module for running AD cmdlets
 Import-Module activedirectory
 
+# Check if CSV file exists
+if (!(Test-Path $InputFileName))
+{
+    Write-Warning "The input file name you specified can't be found."
+    EXIT
+}
+
 # Loop through each record in the CSV file 
-Import-Csv $path | Foreach-Object { 
+Import-Csv $InputFileName | Foreach-Object { 
 
    #Check to see if the user already exists in AD
    if (Get-ADUser -F {SamAccountName -eq $_.SamAccountName})
