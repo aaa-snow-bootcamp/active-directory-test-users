@@ -11,7 +11,7 @@
 [CmdletBinding()]
 param (
 	[Parameter( Mandatory=$false)]
-	[string]$InputFileName = "users.csv",
+	[string]$InputFileName = "users.csv"
 )
 
 # Import active directory module for running AD cmdlets
@@ -27,8 +27,10 @@ if (!(Test-Path $InputFileName))
 # Loop through each record in the CSV file 
 Import-Csv $InputFileName | Foreach-Object { 
 
+   $Username = "TEST2"
+
    #Check to see if the user already exists in AD
-   if (Get-ADUser -F {SamAccountName -eq $_.SamAccountName})
+   if (Get-ADUser -F {SamAccountName -eq $Username})
    {
    	#If user does exist, give a warning
 	Write-Warning "A user account with username $Username already exist in Active Directory."
@@ -41,7 +43,7 @@ Import-Csv $InputFileName | Foreach-Object {
 	# Set each user attribute as specified in the CSV file
 	foreach ($property in $_.PSObject.Properties)
 	{
-		Invoke-Expression -Command "Set-ADUser -$($property.Name) $($property.Value)"
+		Invoke-Expression -Command "Set-ADUser -Identity $Username -$($property.Name) $($property.Value)"
 	} 
    }
 
