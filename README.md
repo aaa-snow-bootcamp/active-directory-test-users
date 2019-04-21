@@ -1,17 +1,12 @@
-# Active Directory Test Users - Lab Guide
+# Generating and Importing Active Directory Test Users
 
-## Overview
+This guide shows how to import Active Directory groups and users from a CSV file containing randomly generated user data.
 
 Requirements:
 
 - Access to Windows with Active Directory (AD)
 
-## Groups
-
-Work notes:
-
-- Create groups manually
-- Modify below step to include group assignments
+## Generating groups
 
 ## Generating user data
 
