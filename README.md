@@ -19,19 +19,15 @@ Work notes:
 
 2. Make sure to enter the [Active Directory attribute names](https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-aduser?view=win10-ps) in the *Field Name* column. This way we can import the data later automatically, without having to manually map the fields.
 
-4. Choose *CSV* as the export format.
+4. Choose *CSV* as the export format and ensure to include the header row.
 
 ✔ Now we have a CSV file with our user data.
 
 ## Importing user data into Active Directory
 
-1. At the beginning of the script modify the path behind *Import-csv* to point to your generated file
+The supplied script *ImportUsers.ps1* creates a user for each column in your CSV file and sets the user attributes you specified in your CSV file.
 
-(Challenge: Re-write the powershell script to accept the file name of the CSV as a parameter when run from the command line.)
-
-2. Add all Active Directory attributes that you would like to map.
-
-3. Run the script from your Windows command line.
+1. Run the script from your Windows command line, specifying the path to your CSV file: `ImportUsers users.csv`
 
 ✔ Check Active Directory to find your newly generated users and groups.
 
