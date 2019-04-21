@@ -25,9 +25,7 @@ Work notes:
 
 ## Importing user data into Active Directory
 
-Work notes: 
+Our import is based on a [PowerShell script by Robert Allen](https://activedirectorypro.com/create-bulk-users-active-directory/). 
 
-- Use import script from https://activedirectorypro.com/create-bulk-users-active-directory/
-- Modify to read out columns, if possible. See https://stackoverflow.com/questions/11885246/how-do-i-loop-through-a-line-from-a-csv-file-in-powershell. 
 
 
