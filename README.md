@@ -25,9 +25,7 @@ Work notes:
 
 ## Importing user data into Active Directory
 
-Our import is based on a [PowerShell script by Robert Allen](https://activedirectorypro.com/create-bulk-users-active-directory/). 
-
-1. At the beginning of the scropt modify the path behind *Import-csv* to point to your generated file
+1. At the beginning of the script modify the path behind *Import-csv* to point to your generated file
 
 (Challenge: Re-write the powershell script to accept the file name of the CSV as a parameter when run from the command line.)
 
