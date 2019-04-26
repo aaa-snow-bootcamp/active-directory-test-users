@@ -23,28 +23,29 @@ if (!(Test-Path $InputFileName))
     Write-Warning "The input file name you specified can't be found."
     EXIT
 }
+  
+#Store the data from ADUsers.csv in the $ADUsers variable
+$ADUsers = Import-csv "users.csv"
 
-# Loop through each record in the CSV file 
-Import-Csv $InputFileName | Foreach-Object { 
-
-   $Username = "TEST2"
-
-   #Check to see if the user already exists in AD
-   if (Get-ADUser -F {SamAccountName -eq $Username})
-   {
-   	#If user does exist, give a warning
-	Write-Warning "A user account with username $Username already exist in Active Directory."
-   }
-   else
-   {
-	# Create AD user
-	New-ADUser -SamAccountName $Username
-
-	# Set each user attribute as specified in the CSV file
-	foreach ($property in $_.PSObject.Properties)
-	{
-		Invoke-Expression -Command "Set-ADUser -Identity $Username -$($property.Name) $($property.Value)"
-	} 
-   }
-
+#Loop through each row containing user details in the CSV file 
+foreach ($User in $ADUsers)
+{
+		
+        #Account will be created in the OU provided by the $OU variable read from the CSV file
+		New-ADUser `
+            -SamAccountName $User.SamAccountName `
+            -Name $User.Name `
+            -GivenName $User.GivenName `
+            -Surname $User.Surname `
+            -Enabled $True `
+            -DisplayName $User.DisplayName `
+            -City $User.City `
+            -State $User.State `
+            -PostalCode $User.PostalCode `
+            -StreetAddress $User.StreetAddress`
+            -OfficePhone $User.OfficePhone `
+            -EmailAddress $User.EmailAddress `
+            -Title $User.Title `
+            -EmployeeID $user.EmployeeID `
+            -AccountPassword (convertto-securestring "PASSWORDabcdefg123456$-" -AsPlainText -Force) -ChangePasswordAtLogon $True `
 }
