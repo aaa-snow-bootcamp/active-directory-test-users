@@ -28,11 +28,16 @@ The script will generate users in the default Organizational Unit and it will us
 
 ✔ Check Active Directory to find your newly generated users.
 
-## Generating group memberships
+## Bonus task: Generating and importing Groups into Active Directory
 
-1. Determine how to generate a `.csv` file of 50 groups with basic nesting (groups within groups). Consider using the same method as for generating user data above. How would you represent a group in the generated data (i.e. what columns does your generated `.csv` file need)?
+Consider adding 50 groups with basic nesting (groups within groups) to ActiveDirectory. How would you generate the group data? How can you randomly assing each user to one of the groups?
 
-2. Create a script to import groups from the generated `.csv` file into Active Directory. Consider reviewing the existing script for importing users (see above), and repurpose it for creating groups. Note: The [Powershell command for creating a new group](https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adgroup?view=win10-ps).  
+Suggestions:
 
-3. Once your groups are imported, how would you randomly assing each user to one of the groups? Is it necessary to modify and re-do the user import completed in the previous section?
+* Generate a `.csv` file of groups using the same method as for generating user data above. How would you represent a group in the generated data (i.e. what columns does your generated `.csv` file need)?
+
+* Create a script to import groups from the generated `.csv` file into Active Directory. Consider reviewing the existing script for importing users (see above), and repurpose it for creating groups.
+
+* Review the [Powershell command for creating a new group](https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adgroup?view=win10-ps) for use in a script to generate groups.
+
 
